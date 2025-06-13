@@ -34,7 +34,7 @@ Ensure you have the following installed and configured:
     ```
 
     Enter your Access Key ID and Secret Access Key so Terraform can provision resources in your AWS account.
-   ![Step 1](images/1.png) 
+   ![Step 1](images/1.PNG) 
 
 4. **Authenticate with Azure**  
    
