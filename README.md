@@ -26,6 +26,7 @@ Ensure you have the following installed and configured:
     ```powershell
     cd path\to\your\terraform-project
     ```
+    This should be the folder where your `main.tf` lives (see [main.tf on GitHub](https://github.com/jason0x6C69/multi-cloud-terraform/blob/main/main.tf)).
 
 2. **Authenticate with AWS**  
    
