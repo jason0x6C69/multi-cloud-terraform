@@ -1,26 +1,87 @@
-# Multi-Cloud Terraform Security Checks
+# Terraform Multi-Cloud Lab
 
-Provision minimal AWS & Azure resources via Terraform, then scan for insecure configurations using **tfsec** and **Checkov**.
+This repository is a hands-on lab I created for exploring Terraform with the three largest cloud providers (AWS, Azure, and GCP) using their free-tier offerings. The goal is to learn how to:
 
+1. Provision identical infrastructure on each platform  
+2. Run tfsec to scan your Terraform code for security issues  
 
-Description
+---
 
-This hands-on demo shows how to:
+## Prerequisites
 
-1. Use **Terraform** to provision:
-   - A public-read S3 bucket in AWS  
-   - A Storage Account + public container in Azure  
-2. Run **tfsec** and **Checkov** to catch:
-   - Publicly-readable buckets/containers  
-   - Weak TLS settings  
-3. Clean up to stay within free-tier limits.
+Ensure you have the following installed and configured:
 
+- Terraform  
+- AWS CLI  
+- Azure CLI  
+- Google Cloud SDK  
+- tfsec  
 
+---
 
- Prerequisites
+## Getting Started
 
-- **AWS** account (Free Tier)  
-- **Azure** account (Free Tier)  
-- **Terraform** v1.x installed  
-- **AWS CLI** & **Azure CLI** installed & authenticated  
-- **tfsec** & **Checkov** installed  
+1. **Change to your project directory**  
+   
+    ```powershell
+    cd path\to\your\terraform-project
+    ```
+
+2. **Authenticate with AWS**  
+   
+    ```powershell
+    aws configure
+    ```
+
+    Enter your Access Key ID and Secret Access Key so Terraform can provision resources in your AWS account.
+
+3. **Authenticate with Azure**  
+   
+    ```powershell
+    az login
+    az account set --subscription <YOUR_SUBSCRIPTION_ID>
+    ```
+
+    The `az login` command opens a browser for credentials, and setting the subscription ensures Terraform targets the correct Azure account.
+
+4. **Authenticate with Google Cloud**  
+   
+    ```bash
+    gcloud auth application-default login
+    gcloud config set project <YOUR_PROJECT_ID>
+    ```
+
+    These commands obtain application-default credentials and point Terraform at the correct GCP project.
+
+5. **Initialize Terraform**  
+   
+    ```bash
+    terraform init
+    ```
+
+    Downloads provider plugins, installs modules, and prepares your working directory for the next commands.
+
+6. **Preview changes with Terraform Plan**  
+   
+    ```bash
+    terraform plan
+    ```
+
+    Shows what Terraform will create, update, or destroy—without applying anything.
+
+7. **Apply your infrastructure changes**  
+   
+    ```bash
+    terraform apply
+    ```
+
+    Provisions (or updates) all resources defined in your `.tf` files. You’ll be prompted to confirm before changes are made.
+
+8. **Scan for security issues with tfsec**  
+   
+    ```bash
+    tfsec .
+    ```
+
+    Performs static analysis on your Terraform code and flags common misconfigurations and vulnerabilities.
+
