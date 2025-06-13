@@ -44,8 +44,9 @@ Ensure you have the following installed and configured:
     ```
 
     The `az login` command opens a browser for credentials, and setting the subscription ensures Terraform targets the correct Azure account.
+      ![Step 1](images/2.PNG) 
 
-5. **Authenticate with Google Cloud**  
+6. **Authenticate with Google Cloud**  
    
     ```bash
     gcloud auth application-default login
@@ -53,36 +54,41 @@ Ensure you have the following installed and configured:
     ```
 
     These commands obtain application-default credentials and point Terraform at the correct GCP project.
+      ![Step 1](images/3.PNG) 
 
-6. **Initialize Terraform**  
+8. **Initialize Terraform**  
    
     ```bash
     terraform init
     ```
 
     Downloads provider plugins, installs modules, and prepares your working directory for the next commands.
+      ![Step 1](images/4.PNG) 
 
-7. **Preview changes with Terraform Plan**  
+10. **Preview changes with Terraform Plan**  
    
     ```bash
     terraform plan
     ```
 
     Shows what Terraform will create, update, or destroy—without applying anything.
+       ![Step 1](images/5.PNG) 
 
-8. **Apply your infrastructure changes**  
+12. **Apply your infrastructure changes**  
    
     ```bash
     terraform apply
     ```
 
     Provisions (or updates) all resources defined in your `.tf` files. You’ll be prompted to confirm before changes are made.
+       ![Step 1](images/6.PNG) 
 
-9. **Scan for security issues with tfsec**  
+14. **Scan for security issues with tfsec**  
    
     ```bash
     tfsec .
     ```
 
     Performs static analysis on your Terraform code and flags common misconfigurations and vulnerabilities.
+       ![Step 1](images/7.PNG) 
 
