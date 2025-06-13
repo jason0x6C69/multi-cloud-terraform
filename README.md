@@ -34,8 +34,9 @@ Ensure you have the following installed and configured:
     ```
 
     Enter your Access Key ID and Secret Access Key so Terraform can provision resources in your AWS account.
+   ![Step 1](images/1.png) 
 
-3. **Authenticate with Azure**  
+4. **Authenticate with Azure**  
    
     ```powershell
     az login
@@ -44,7 +45,7 @@ Ensure you have the following installed and configured:
 
     The `az login` command opens a browser for credentials, and setting the subscription ensures Terraform targets the correct Azure account.
 
-4. **Authenticate with Google Cloud**  
+5. **Authenticate with Google Cloud**  
    
     ```bash
     gcloud auth application-default login
@@ -53,7 +54,7 @@ Ensure you have the following installed and configured:
 
     These commands obtain application-default credentials and point Terraform at the correct GCP project.
 
-5. **Initialize Terraform**  
+6. **Initialize Terraform**  
    
     ```bash
     terraform init
@@ -61,7 +62,7 @@ Ensure you have the following installed and configured:
 
     Downloads provider plugins, installs modules, and prepares your working directory for the next commands.
 
-6. **Preview changes with Terraform Plan**  
+7. **Preview changes with Terraform Plan**  
    
     ```bash
     terraform plan
@@ -69,7 +70,7 @@ Ensure you have the following installed and configured:
 
     Shows what Terraform will create, update, or destroy—without applying anything.
 
-7. **Apply your infrastructure changes**  
+8. **Apply your infrastructure changes**  
    
     ```bash
     terraform apply
@@ -77,7 +78,7 @@ Ensure you have the following installed and configured:
 
     Provisions (or updates) all resources defined in your `.tf` files. You’ll be prompted to confirm before changes are made.
 
-8. **Scan for security issues with tfsec**  
+9. **Scan for security issues with tfsec**  
    
     ```bash
     tfsec .
