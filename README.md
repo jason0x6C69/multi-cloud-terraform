@@ -92,5 +92,6 @@ Ensure you have the following installed and configured:
 
     Performs static analysis on your Terraform code and flags common misconfigurations and vulnerabilities.
        ![Step 1](images/7.PNG)
+    
     You can view my full analysis of the tfsec results in [tfsec-audit.md](tfsec-audit.md). 
 
